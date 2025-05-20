@@ -1,0 +1,23 @@
+function [P, Value, MD] = MacaulayDuration(r, n, c, F)
+    % r: 利率
+    % n: 年數
+    % c: 每期付息金額
+    % F: 面額
+
+    % Step 1: 計算債券價格 P（折現所有現金流）
+    P = 0;
+    for i = 1:n
+        P = 
+    end
+    P = P + (c + F) / (1 + r)^n; % 最後一期利息 + 本金
+
+    % Step 2: 計算 Macaulay Duration 的分子
+    Value = 0;
+    for i = 1:n
+        Value = Value + i * c / (1 + r)^i;
+    end
+    Value = Value + n * F / (1 + r)^n;
+
+    % Step 3: Macaulay Duration = 加權平均時間
+    MD = Value / P;
+end
